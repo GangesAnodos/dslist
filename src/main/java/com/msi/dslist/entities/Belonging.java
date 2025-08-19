@@ -1,13 +1,10 @@
 package com.msi.dslist.entities;
 
-import java.util.Objects;
-
-import com.msi.dslist.entities.BelongingPK;
-import com.msi.dslist.entities.Game;
-import com.msi.dslist.entities.GameList;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+
+import java.util.Objects;
 
 @Entity
 @Table(name = "tb_belonging")
@@ -43,19 +40,14 @@ public class Belonging {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Belonging belonging = (Belonging) o;
+        return Objects.equals(id, belonging.id);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Belonging other = (Belonging) obj;
-        return Objects.equals(id, other.id);
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
