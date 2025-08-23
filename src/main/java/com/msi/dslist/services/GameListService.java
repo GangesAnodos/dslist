@@ -26,6 +26,7 @@ public class GameListService {
         List<GameList> result = gameListRepository.findAll();
         return result.stream().map(GameListDTO::new).toList();
     }
+
     @Transactional
     public void moveGameList(Long listId, int sourceIndex, int destinationIndex){
         List<GameMinProjection> list = gameRepository.searchByList(listId);
@@ -38,5 +39,10 @@ public class GameListService {
         for (int i = min; i <= max; i++){
             gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
         }
+    }
+
+    @Transactional
+    public void creatGameList(){
+
     }
 }
