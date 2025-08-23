@@ -41,8 +41,5 @@ public class GameListService {
         }
     }
 
-    @Transactional
-    public void creatGameList(){
 
-    }
 }
