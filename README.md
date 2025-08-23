@@ -37,3 +37,12 @@ Execute o seguinte comando no terminal:
 ```bash
 docker run --name dslist-db -e POSTGRES_PASSWORD=1234567 -p 5433:5432 -d postgres
 ```
+Observação: O arquivo application-dev.properties está configurado para se conectar à porta 5433 do seu localhost.
+
+#### 2. Execução da Aplicação
+Com o banco de dados no ar, você pode iniciar a aplicação Spring Boot.
+Navegue até o diretório raiz do projeto no terminal e execute o seguinte comando:
+```bash
+./mvnw spring-boot:run
+```
+A aplicação será iniciada na porta 8080.
